@@ -5,13 +5,22 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.GridBagLayout ) {
 			"$columnSpecs": "0:1.0"
-			"$rowSpecs": "0, 0:1.0"
+			"$rowSpecs": "0:1.0, bottom:0"
 			"$hGap": 5
 			"$vGap": 5
 			"$alignLeft": true
 			"$alignTop": true
 		} ) {
 			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) {
+				"columns": 3
+				"rows": 3
+			} ) {
+				name: "PuzzleGridSubPanel"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+				"hAlign": 5
+				"vAlign": 5
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
 			"size": new java.awt.Dimension( 400, 300 )
